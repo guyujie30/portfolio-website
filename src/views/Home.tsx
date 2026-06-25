@@ -29,21 +29,21 @@ export default function Home({
     {
       icon: <Hammer aria-hidden="true" />,
       title: featuredProjects[0]?.title ?? "最拿得出手的项目",
-      text: featuredProjects[0]?.description ?? "从界面、交互到可维护的前端结构，关注真实可用的落地质量。",
+      text: featuredProjects[0]?.description ?? "一个用于整理个人介绍、研究笔记和项目记录的网站。",
       href: "/projects",
       action: "看项目",
     },
     {
       icon: <BookOpen aria-hidden="true" />,
       title: latestNotes[0]?.title ?? "最近一篇笔记",
-      text: latestNotes[0]?.excerpt ?? "记录技术判断、设计观察和项目复盘，让思考可以被再次使用。",
+      text: latestNotes[0]?.excerpt ?? "笔记内容主要围绕 LLM 决策、多智能体系统、Agent 工具调用和项目复盘。",
       href: "/notes",
       action: "读笔记",
     },
     {
       icon: <Sparkles aria-hidden="true" />,
       title: "核心优势",
-      text: "能把产品想法拆成清晰的信息结构，再用稳定的前端实现和有辨识度的视觉表达交付出来。",
+      text: "具备 Java 后端与系统开发基础，包含微服务、搜索、对象存储和 OCR 系统实践；研究方向与 LLM 决策、多智能体协作和 Agent 工具调用相关。",
       href: "/about",
       action: "了解我",
     },
@@ -58,11 +58,17 @@ export default function Home({
           </Sticker>
           <h1 className="hero-identity">
             <span className="hero-name">{profile?.name ?? "路飞"}</span>
-            <span className="hero-role">{profile?.title ?? "研0 / LLM 决策方向 / Agent 开发探索者"}</span>
+            <span className="hero-role">{profile?.title ?? "上海电力大学硕士研究生 / LLM 决策与多智能体系统"}</span>
           </h1>
           <p>
             {profile?.intro ?? "这里展示我的项目、写作和工作方式。内容先用占位文案搭好结构，之后可以替换成真实经历。"}
           </p>
+          <div className="hero-facts" aria-label="基础信息">
+            <span>湖南衡阳</span>
+            <span>23 岁</span>
+            <span>上海电力大学</span>
+            <span>硕士研究生</span>
+          </div>
           <div className="hero-actions" aria-label="主要操作">
             <Link className="button button-primary" href="/projects">
               查看项目 <ArrowRight aria-hidden="true" />

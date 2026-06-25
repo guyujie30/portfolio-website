@@ -54,18 +54,18 @@ async function main() {
     where: { id: "default-profile" },
     update: {
       name: "路飞",
-      title: "研0 / LLM 决策方向 / Agent 开发探索者",
+      title: "上海电力大学硕士研究生 / LLM 决策与多智能体系统",
       intro:
-        "上海电力大学研0，研究方向是 LLM 决策与 Agent 系统。我正在从前端全栈、Prisma/Supabase、Agent 框架和论文复现开始，把研究兴趣慢慢做成能跑、能展示、能复盘的项目。",
+        "本科毕业于湖南农业大学计算机科学与技术专业，具备 Java 后端、微服务、搜索与 OCR 系统实践经历；现就读于上海电力大学，研究方向为 LLM 决策与多智能体系统。这个网站用于整理个人介绍、研究笔记与项目记录。",
       email: null,
       githubUrl: "https://github.com/guyujie30",
     },
     create: {
       id: "default-profile",
       name: "路飞",
-      title: "研0 / LLM 决策方向 / Agent 开发探索者",
+      title: "上海电力大学硕士研究生 / LLM 决策与多智能体系统",
       intro:
-        "上海电力大学研0，研究方向是 LLM 决策与 Agent 系统。我正在从前端全栈、Prisma/Supabase、Agent 框架和论文复现开始，把研究兴趣慢慢做成能跑、能展示、能复盘的项目。",
+        "本科毕业于湖南农业大学计算机科学与技术专业，具备 Java 后端、微服务、搜索与 OCR 系统实践经历；现就读于上海电力大学，研究方向为 LLM 决策与多智能体系统。这个网站用于整理个人介绍、研究笔记与项目记录。",
       email: null,
       githubUrl: "https://github.com/guyujie30",
     },
@@ -76,7 +76,7 @@ async function main() {
       title: "Portfolio Website",
       type: "个人网站",
       description:
-        "一个全栈式个人网站，用来展示项目、笔记和个人介绍。从 Neo-brutalism 视觉、Next.js 架构、Prisma 数据模型到 Supabase 数据连接，作为长期迭代的个人技术阵地。",
+        "一个用于整理个人介绍、研究笔记和项目记录的网站。页面包含首页、关于、项目和笔记四个部分，内容围绕个人背景、研究方向、项目实践和技术复盘展开。",
       tags: ["Next.js", "Prisma", "Supabase"],
       demoUrl: "#",
       repoUrl: "#",
@@ -87,7 +87,7 @@ async function main() {
       title: "LangGraph 决策流复现计划",
       type: "研究复现",
       description:
-        "围绕 LangGraph 的状态图、节点、边和 checkpoint 机制，复现一个可解释的 LLM 决策流程。目标是把 Agent 的“下一步怎么选”变成能观察、能调试的流程。",
+        "围绕 LangGraph 的状态图、节点、边和 checkpoint 机制，整理可解释的 LLM 决策流程，关注 Agent 的状态流转、工具调用和结果校验。",
       tags: ["LangGraph", "Agent", "Decision"],
       demoUrl: "#",
       repoUrl: "https://github.com/langchain-ai/langgraph",
@@ -129,7 +129,7 @@ async function main() {
       category: "项目复盘",
       excerpt: "把 Agent 决策拆成目标理解、状态判断、工具选择、结果校验四个环节，先建立研究问题的地图。",
       content:
-        "我现在理解的 LLM Agent，不是“模型会调用工具”这么简单。真正值得研究的是：它在每一步到底根据什么做选择。\n\n一个 Agent 至少要经历四类判断：先理解目标，再判断当前状态，然后选择工具或行动，最后检查结果是否足够好。很多系统失败不是因为模型完全不会，而是因为状态没有保存清楚、工具选择没有约束、结果校验没有闭环。\n\n所以我后面会把“决策”当成主线来做复现：把输入、状态、动作、观察结果都记录下来，让每一步选择都能被回看、比较和改进。慢慢来，总会变强。",
+        "LLM Agent 不只是“模型调用工具”。更关键的问题是：它在每一步依据什么做选择。\n\n一个 Agent 通常包含目标理解、状态判断、工具选择和结果校验等环节。系统失效往往不是单点能力不足，而是状态维护不清晰、工具选择缺少约束、结果校验没有闭环。\n\n把输入、状态、动作和观察结果记录下来，才能让 Agent 的决策过程具备可追踪性，也更便于比较不同框架和流程设计的差异。",
       date: new Date("2026-06-24"),
     },
     {
@@ -156,7 +156,7 @@ async function main() {
       category: "踩坑记录",
       excerpt: "先把展示、笔记、项目和后台 CRUD 搭起来，再把研究过程一点点沉淀成可检索、可复盘的材料。",
       content:
-        "做个人网站不只是为了好看，也是在搭一个长期可用的研究工作台。\n\n项目页可以记录复现路线，笔记页可以沉淀判断，关于页可以展示我的学习路径。后面接上 Supabase 和 Prisma 之后，内容就不再只是写死在代码里，而是可以持续维护、搜索和扩展。\n\n我希望这个网站最后能变成一个小型知识库：记录我从前端全栈走向 LLM 决策和 Agent 开发的过程。现在还很早，但方向是清楚的。",
+        "个人网站不仅是展示入口，也可以作为研究资料和项目记录的索引。\n\n项目页用于整理实践内容，笔记页用于保存技术复盘，关于页用于呈现个人背景。接入 Supabase 和 Prisma 后，内容不再依赖静态代码维护，后续可以通过数据库持续更新。\n\n这个网站的意义在于把个人背景、研究方向和项目材料放在同一个结构里，便于长期整理和回看。",
       date: new Date("2026-03-28"),
     },
   ];

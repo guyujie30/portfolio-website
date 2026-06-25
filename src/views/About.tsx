@@ -1,26 +1,26 @@
-import { BadgeCheck, Code2, Layers3, PenTool, Rocket } from "lucide-react";
+import { BadgeCheck, Code2, IdCard, Layers3, Rocket, Sparkles } from "lucide-react";
 import BrutalCard from "../components/BrutalCard";
 import Sticker from "../components/Sticker";
 import { fallbackProfile } from "../data/fallback";
 
 const skillGroups = [
   {
-    title: "前端工程",
-    items: ["React", "Next.js", "TypeScript", "Server Actions"],
+    title: "Java 工程基础",
+    items: ["Java", "Spring Boot", "Spring Cloud", "MyBatis"],
   },
   {
-    title: "Agent 方向",
+    title: "研究方向",
     items: ["LLM 决策", "LangGraph", "AutoGen", "Multi-Agent"],
   },
   {
-    title: "数据与内容",
-    items: ["Prisma", "Supabase", "PostgreSQL", "内容建模"],
+    title: "当前项目工具",
+    items: ["Next.js", "Prisma", "Supabase", "PostgreSQL"],
   },
 ];
 
 const timeline = [
-  { year: "2026", title: "上海电力大学研0", text: "进入研究生阶段，方向聚焦 LLM 决策与 Agent 系统，开始把研究过程沉淀到个人网站。" },
-  { year: "2025", title: "本科毕业设计：OCR 信息收集平台", text: "用 Vue、Spring Boot 和 EasyOCR 做证书信息识别与管理，完成从图像识别到系统集成的闭环。" },
+  { year: "2026", title: "上海电力大学硕士研究生", text: "研究方向为 LLM 决策与多智能体系统，关注 Agent 在目标理解、状态维护、工具调用和结果校验中的决策过程。" },
+  { year: "2025", title: "本科毕业设计:OCR 信息收集平台", text: "用 Vue、Spring Boot 和 EasyOCR 做证书信息识别与管理，完成从图像识别到系统集成的闭环。" },
   { year: "2024", title: "通过软件设计师中级", text: "补齐软件工程、系统设计和基础理论能力，也获得国家励志奖学金和校级三好学生。" },
   { year: "2023", title: "后端开发实习", text: "参与商城小程序后端系统，接触 Spring Cloud 微服务、Elasticsearch 搜索和 Minio 图片存储。" },
   { year: "2021", title: "湖南农业大学计算机科学与技术", text: "本科阶段系统学习计算机网络、组成原理、大数据开发等课程，建立工程基础。" },
@@ -44,20 +44,22 @@ export default function About({ profile = fallbackProfile }: Partial<AboutProps>
           ABOUT
         </Sticker>
         <h1>关于我</h1>
-        <p>{profile?.intro ?? "这里可以放你的真实简介、工作经历和联系方式。当前先保留结构化占位内容。"}</p>
+        <p>这里整理我的教育背景、工程经历、研究方向与阶段性成果。比起展开成完整简历，这一页更关注经历之间的脉络。</p>
       </div>
 
       <div className="about-layout">
         <BrutalCard tone="red" className="about-lead">
-          <h2>{profile?.title ?? "我关注可用、清楚、有性格的产品体验。"}</h2>
-          <p>
-            23 岁，男，湖南衡阳人，现在是上海电力大学研0。研究方向是 LLM 决策，短期目标是把 Agent 框架、论文复现和全栈项目串起来，做出能展示、能复盘、能继续扩展的东西。
-          </p>
-          <div className="profile-facts" aria-label="个人信息">
-            <span>湖南衡阳</span>
-            <span>上海电力大学</span>
-            <span>软件设计师中级</span>
-            <span>CET-6</span>
+          <div className="card-title-row">
+            <IdCard aria-hidden="true" />
+            <h3>个人介绍</h3>
+          </div>
+          <div className="about-copy">
+            <p>
+              上海电力大学硕士研究生，拥有 Java 后端开发经验，熟练运用 Spring Cloud、Elasticsearch、Minio、EasyOCR 完成微服务、检索、分布式存储、图像识别类系统开发，熟悉从需求到上线的完整工程流程。
+            </p>
+            <p>
+              系统掌握大模型基础理论与实验开发工具：使用 PyTorch 搭建深度学习实验，借助 HuggingFace 生态完成预训练模型调用与微调；运用 vLLM 实现高效推理服务，搭配 Z3 求解器完成约束规划相关实验，可基于 LangChain 搭建推理智能体，独立复现各类 LLM 决策相关学术方案。
+            </p>
           </div>
         </BrutalCard>
 
@@ -83,10 +85,10 @@ export default function About({ profile = fallbackProfile }: Partial<AboutProps>
 
           <BrutalCard tone="violet" rotate="right">
             <div className="card-title-row">
-              <PenTool aria-hidden="true" />
-              <h3>工作方式</h3>
+              <Sparkles aria-hidden="true" />
+              <h3>核心优势</h3>
             </div>
-            <p>先厘清目标和约束，再设计信息层级；先让功能可用，再打磨体验；先把判断写下来，再让下一次工作更快。</p>
+            <p>Java 后端工程基础较完整，具备微服务拆分、搜索能力接入、对象存储集成和 OCR 系统落地经验；研究方向覆盖 LLM 决策、多智能体协作与 Agent 工具调用，能够把工程实现与研究问题放在同一条线上理解。</p>
           </BrutalCard>
 
           <BrutalCard tone="yellow">
@@ -94,7 +96,7 @@ export default function About({ profile = fallbackProfile }: Partial<AboutProps>
               <Layers3 aria-hidden="true" />
               <h3>关注方向</h3>
             </div>
-            <p>LLM 决策、多智能体协作、Agent 工具调用、个人知识库、全栈内容系统。爱好是探索新技术，也包括和 bug 长期对线。</p>
+            <p>LLM 决策、多智能体协作、Agent 工具调用、知识库系统、Java 后端工程与研究型项目复现。</p>
           </BrutalCard>
         </div>
       </div>
@@ -105,7 +107,7 @@ export default function About({ profile = fallbackProfile }: Partial<AboutProps>
             <span className="timeline-year">{item.year}</span>
             <div>
               <div className="card-title-row">
-                {item.year === "现在" ? <Rocket aria-hidden="true" /> : <BadgeCheck aria-hidden="true" />}
+                {item.year === "2026" ? <Rocket aria-hidden="true" /> : <BadgeCheck aria-hidden="true" />}
                 <h3>{item.title}</h3>
               </div>
               <p>{item.text}</p>
