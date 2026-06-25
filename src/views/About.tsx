@@ -1,4 +1,4 @@
-import { BadgeCheck, Code2, IdCard, Layers3, Mail, MessageSquareText, Rocket, Sparkles, Phone } from "lucide-react";
+import { BadgeCheck, Code2, IdCard, Layers3, Mail, MessageSquareText, Rocket, Sparkles } from "lucide-react";
 import BrutalCard from "../components/BrutalCard";
 import Sticker from "../components/Sticker";
 import { fallbackProfile } from "../data/fallback";
@@ -40,7 +40,7 @@ type AboutProps = {
 
 export default function About({ profile = fallbackProfile }: Partial<AboutProps>) {
   return (
-    <section className="page-section">
+    <section className="page-section about-page">
       <div className="page-title">
         <Sticker tone="yellow" tilt="left">
           ABOUT
@@ -80,11 +80,8 @@ export default function About({ profile = fallbackProfile }: Partial<AboutProps>
             <div className="contact-list">
               <span>爱好：新技术、游戏、动漫、小说、日常阅读</span>
               {profile?.githubUrl ? <a href={profile.githubUrl}>GitHub: guyujie30</a> : <span>GitHub: guyujie30</span>}
-              <span><Phone aria-hidden="true" /> 联系方式:15273478395</span>
-              <span><Mail aria-hidden="true" />邮箱:15273478395@163.com</span>
-              
-              
-              
+              <span>日常：读论文、做实验、整理技术笔记</span>
+              {profile?.email ? <span><Mail aria-hidden="true" /> 邮箱:{profile.email}</span> : null}
             </div>
           </BrutalCard>
         </div>

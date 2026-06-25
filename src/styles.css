@@ -421,7 +421,7 @@ main {
   margin-bottom: 30px;
 }
 
-.page-section:has(.about-layout) {
+.about-page {
   width: min(1120px, calc(100% - 40px));
 }
 
@@ -605,6 +605,7 @@ main {
 .intro-tags span,
 .contact-list span,
 .contact-list a {
+  max-width: 100%;
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -613,6 +614,7 @@ main {
   background: var(--neo-white);
   font-size: 14px;
   font-weight: 700;
+  overflow-wrap: anywhere;
 }
 
 .contact-card p {
