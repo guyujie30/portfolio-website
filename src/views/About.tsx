@@ -1,4 +1,4 @@
-import { BadgeCheck, Code2, IdCard, Layers3, Rocket, Sparkles } from "lucide-react";
+import { BadgeCheck, Code2, IdCard, Layers3, Mail, MessageSquareText, Rocket, Sparkles } from "lucide-react";
 import BrutalCard from "../components/BrutalCard";
 import Sticker from "../components/Sticker";
 import { fallbackProfile } from "../data/fallback";
@@ -26,6 +26,8 @@ const timeline = [
   { year: "2021", title: "湖南农业大学计算机科学与技术", text: "本科阶段系统学习计算机网络、组成原理、大数据开发等课程，建立工程基础。" },
 ];
 
+const introTags = ["Java", "LLM 决策", "Multi-Agent 系统", "LangChain", "LangGraph"];
+
 type AboutProps = {
   profile: {
     name: string;
@@ -38,7 +40,7 @@ type AboutProps = {
 
 export default function About({ profile = fallbackProfile }: Partial<AboutProps>) {
   return (
-    <section className="page-section">
+    <section className="page-section about-page">
       <div className="page-title">
         <Sticker tone="yellow" tilt="left">
           ABOUT
@@ -48,20 +50,41 @@ export default function About({ profile = fallbackProfile }: Partial<AboutProps>
       </div>
 
       <div className="about-layout">
-        <BrutalCard tone="red" className="about-lead">
-          <div className="card-title-row">
-            <IdCard aria-hidden="true" />
-            <h3>个人介绍</h3>
-          </div>
-          <div className="about-copy">
-            <p>
-              上海电力大学硕士研究生，拥有 Java 后端开发经验，熟练运用 Spring Cloud、Elasticsearch、Minio、EasyOCR 完成微服务、检索、分布式存储、图像识别类系统开发，熟悉从需求到上线的完整工程流程。
-            </p>
-            <p>
-              系统掌握大模型基础理论与实验开发工具：使用 PyTorch 搭建深度学习实验，借助 HuggingFace 生态完成预训练模型调用与微调；运用 vLLM 实现高效推理服务，搭配 Z3 求解器完成约束规划相关实验，可基于 LangChain 搭建推理智能体，独立复现各类 LLM 决策相关学术方案。
-            </p>
-          </div>
-        </BrutalCard>
+        <div className="about-left">
+          <BrutalCard tone="red" className="about-lead">
+            <div className="card-title-row">
+              <IdCard aria-hidden="true" />
+              <h3>个人介绍</h3>
+            </div>
+            <div className="about-copy">
+              <p>
+                上海电力大学硕士研究生，拥有 Java 后端开发经验，熟练运用 Spring Cloud、Elasticsearch、Minio、EasyOCR 完成微服务、检索、分布式存储、图像识别类系统开发，熟悉从需求到上线的完整工程流程。
+              </p>
+              <p>
+                系统掌握大模型基础理论与实验开发工具：使用 PyTorch 搭建深度学习实验，借助 HuggingFace 生态完成预训练模型调用与微调；运用 vLLM 实现高效推理服务，搭配 Z3 求解器完成约束规划相关实验，可基于 LangChain 搭建推理智能体，独立复现各类 LLM 决策相关学术方案。
+              </p>
+            </div>
+            <div className="intro-tags" aria-label="个人介绍关键词">
+              {introTags.map((tag) => (
+                <span key={tag}>{tag}</span>
+              ))}
+            </div>
+          </BrutalCard>
+
+          <BrutalCard tone="white" rotate="left" className="contact-card">
+            <div className="card-title-row">
+              <MessageSquareText aria-hidden="true" />
+              <h3>交流通道</h3>
+            </div>
+            <p>日常会记录 LLM 决策、多智能体协作、Agent 工具调用和 Java 工程复现相关内容，闲暇时跟进前沿技术动态，分享学习感悟，也会写下项目开发心得与日常积累的各类技术笔记。</p>
+            <div className="contact-list">
+              <span>爱好：新技术、游戏、动漫、小说、日常阅读</span>
+              {profile?.githubUrl ? <a href={profile.githubUrl}>GitHub: guyujie30</a> : <span>GitHub: guyujie30</span>}
+              <span>日常：读论文、做实验、整理技术笔记</span>
+              {profile?.email ? <span><Mail aria-hidden="true" /> 邮箱:{profile.email}</span> : null}
+            </div>
+          </BrutalCard>
+        </div>
 
         <div className="stacked-cards">
           <BrutalCard tone="white">

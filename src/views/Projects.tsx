@@ -29,7 +29,7 @@ export default function Projects({ projects = fallbackProjects }: Partial<Projec
 
       <div className="project-grid">
         {projects.map((project, index) => (
-          <BrutalCard key={project.title} tone={tones[index % tones.length]} rotate={index % 2 === 0 ? "none" : "left"}>
+          <BrutalCard key={project.title} tone={tones[index % tones.length]} rotate={index % 2 === 0 ? "none" : "left"} className="project-card">
             <div className="project-preview" aria-label={`${project.title} 项目截图占位`}>
               <ImageIcon aria-hidden="true" />
               <span>{project.title}</span>
